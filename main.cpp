@@ -1,33 +1,45 @@
-#include "mainwindow.h"
+#include "player.h"
 
 #include <iostream>
 
 using namespace std;
 
+bool win;
+void start();
+void moveUp();
+void moveDown();
+void moveLeft();
+void moveRight();
+
+
 int main()
 {
     char move;
-    bool win = false;
-    start();
-    while(win==false)
+    while(playagain = true)
     {
-        cin>>move;
-        if(move=='w' || move=='W')
+        start();
+        win = false;
+        while(win==false)
         {
-            moveUp();
+            cin>>move;
+            if(move=='w' || move=='W')
+            {
+                moveUp();
+            }
+            if(move=='s' || move=='S')
+            {
+                movedown();
+            }
+            if(move=='a' || move=='A')
+            {
+                moveLeft();
+            }
+            if(move=='d' || move=='D')
+            {
+                moveRight();
+            }
         }
-        if(move=='s' || move=='S')
-        {
-            movedown();
-        }
-        if(move=='a' || move=='A')
-        {
-            moveLeft();
-        }
-        if(move=='d' || move=='D')
-        {
-            moveRight();
-        }
+    }
     return 0;
 }
 
@@ -56,6 +68,7 @@ void moveDown()
     if(savedPlayer.getPlayerRow()==savedPlayer.totalRows)
     {
         cout<<"you win!";
+        win = true;
     }
     else
     {
