@@ -8,7 +8,7 @@ player::player()
     playerCol = savedMaze.getEntrance();
     playerRow = 0;
     map = savedMaze.getMap();
-    map[playerRow][playerCol] = " o";
+    map[playerRow][playerCol] = "O";
 }
 
 void player::movePlayerUp()
@@ -18,8 +18,8 @@ void player::movePlayerUp()
     {
         if(map[playerRow-1][playerCol]!="\u25A0")
         {
-            map[playerRow-1][playerCol] = " o";
-            map[playerRow][playerCol] = " -";
+            map[playerRow-1][playerCol] = "O";
+            map[playerRow][playerCol] = " ";
             playerRow = playerRow-1;
         }
     }
@@ -29,8 +29,8 @@ void player::movePlayerDown()
 {
     if(map[playerRow+1][playerCol]!="\u25A0")
     {
-        map[playerRow+1][playerCol] = " o";
-        map[playerRow][playerCol] = " -";
+        map[playerRow+1][playerCol] = "O";
+        map[playerRow][playerCol] = " ";
         playerRow = playerRow+1;
     }
 }
@@ -39,8 +39,8 @@ void player::movePlayerRight()
 {
     if(map[playerRow][playerCol+1]!="\u25A0")
     {
-        map[playerRow][playerCol+1] = " o";
-        map[playerRow][playerCol] = " -";
+        map[playerRow][playerCol+1] = "O";
+        map[playerRow][playerCol] = " ";
         playerCol = playerCol+1;
     }
 }
@@ -49,8 +49,8 @@ void player::movePlayerLeft()
 {
     if(map[playerRow][playerCol-1]!="\u25A0")
     {
-        map[playerRow][playerCol-1] = " o";
-        map[playerRow][playerCol] = " -";
+        map[playerRow][playerCol-1] = "O";
+        map[playerRow][playerCol] = " ";
         playerCol = playerCol-1;
     }
 }
