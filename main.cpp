@@ -5,6 +5,7 @@
 using namespace std;
 
 bool win;
+player savedPlayer;
 void start();
 void moveUp();
 void moveDown();
