@@ -16,7 +16,9 @@ void moveRight();
 int main()
 {
     char move;
-    while(playagain = true)
+    char answer;
+    bool playAgain = true;
+    while(playAgain == true)
     {
         start();
         win = false;
@@ -29,7 +31,7 @@ int main()
             }
             if(move=='s' || move=='S')
             {
-                movedown();
+                moveDown();
             }
             if(move=='a' || move=='A')
             {
@@ -39,6 +41,16 @@ int main()
             {
                 moveRight();
             }
+        }
+        cout<<"play again? Y/N"<<endl;
+        cin>>answer;
+        if(answer == 'Y' || answer == 'y')
+        {
+            playAgain = true;
+        }
+        else
+        {
+            playAgain = false;
         }
     }
     return 0;
@@ -68,7 +80,7 @@ void moveDown()
     savedPlayer.movePlayerDown();
     if(savedPlayer.getPlayerRow()==savedPlayer.totalRows)
     {
-        cout<<"you win!";
+        cout<<"you win!"<<endl;
         win = true;
     }
     else
