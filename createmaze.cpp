@@ -56,8 +56,8 @@ using namespace std;
 *****************************************/
 void createMaze::firstMove(string a[totalRows][totalCols], int atCol)
 {
-  a[0][atCol] = " -";
-  a[1][atCol] = " -";
+  a[0][atCol] = " ";
+  a[1][atCol] = " ";
 }
 
 /**********
@@ -118,29 +118,29 @@ void createMaze::generate(string a[totalRows][totalCols],int atRow, int atCol)
       if(direc == 0)
       {
         newRow = atRow -2;
-        a[atRow-1][atCol]= " -";
-        a[atRow-2][atCol]= " -";
+        a[atRow-1][atCol]= " ";
+        a[atRow-2][atCol]= " ";
       }
       //East
       if(direc == 1)
       {
         newCol = atCol + 2;
-        a[atRow][atCol+1]= " -";
-        a[atRow][atCol+2]= " -";
+        a[atRow][atCol+1]= " ";
+        a[atRow][atCol+2]= " ";
       }
       //south
       if(direc == 2)
       {
         newRow = atRow +2;
-        a[atRow+1][atCol]= " -";
-        a[atRow+2][atCol]= " -";
+        a[atRow+1][atCol]= " ";
+        a[atRow+2][atCol]= " ";
       }
       //west
       if(direc == 3)
       {
         newCol = atCol - 2;
-        a[atRow][atCol-1]= " -";
-        a[atRow][atCol-2]= " -";
+        a[atRow][atCol-1]= " ";
+        a[atRow][atCol-2]= " ";
       }
       generate(a,newRow,newCol);
     }
@@ -194,28 +194,28 @@ bool createMaze::taken(string a[totalRows][totalCols],int atRow, int atCol, int 
   bool taken = false;
   if(atRow != 1)
   {
-    if(direc == 0 && a[atRow-2][atCol]== " -")
+    if(direc == 0 && a[atRow-2][atCol]== " ")
     {
       taken = true;
     }
   }
   if(atRow != 9)
   {
-    if(direc == 2 && a[atRow+2][atCol]== " -")
+    if(direc == 2 && a[atRow+2][atCol]== " ")
     {
       taken = true;
     }
   }
   if(atCol != 1)
   {
-    if(direc == 3 && a[atRow][atCol-2] == " -")
+    if(direc == 3 && a[atRow][atCol-2] == " ")
     {
       taken = true;
     }
   }
   if(atCol != 11)
   {
-    if(direc == 1 && a[atRow][atCol+2] == " -")
+    if(direc == 1 && a[atRow][atCol+2] == " ")
     {
       taken = true;
     }
@@ -234,7 +234,7 @@ void createMaze::cExit(string a[totalRows][totalCols])
 {
   exit = rand() % 5;
   exit = 2*exit + 1;
-  a[totalRows-1][exit] = " -";
+  a[totalRows-1][exit] = " ";
 }
 
 
@@ -296,3 +296,4 @@ int createMaze::getExit()
 {
     return exit;
 }
+
